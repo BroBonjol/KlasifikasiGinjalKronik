@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Data Mining - Deteksi Penyakit Ginjal Kronik</title>
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body class="bg-info">
+	<div class="container">
+		<div class="row justify-content-center" style="margin-top: 2rem; margin-bottom: 6.4rem;">
+			<div class="col-md-6 mb-3">
+				<div class="card shadow">
+					<div class="card-body">
+						<h4 class="text-center my-3 mb-4 fw-bold">Deteksi Penyakit Ginjal Kronik</h4>
+						<form action="/result" method="post">
+							<div class="form-floating mb-2">
+								<input type="text" class="form-control" id="umur" placeholder="umur"
+									name="umur">
+								<label for="umur">Umur</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="tekanandarah" placeholder="Tekanan Darah" class="form-control"
+									name="tekanan_darah">
+								<label for="tekanandarah">Tekanan Darah</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="Albumin" placeholder="Albumin" class="form-control"
+									name="albumin">
+								<label for="albumin">Albumin</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="sugar" placeholder="Sugar" class="form-control"
+									name="sugar">
+								<label for="sugar">Sugar</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="seldarahmerah" placeholder="Sel Darah Merah" class="form-control"
+									name="sel_darah_merah">
+								<label for="seldarahmerah">Sel Darah Merah</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="pussel" placeholder="Pussel" class="form-control"
+									name="pussel">
+								<label for="pussel">Pussel</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="puscell" placeholder="Puscell" class="form-control"
+									name="puscell">
+								<label for="puscell">Puscell</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="bakteri" placeholder="Bakteri" class="form-control"
+									name="bakteri">
+								<label for="bakteri">Bakteri</label>
+							</div>
+                            <div class="form-floating mb-2">
+								<input type="text" id="ureum" placeholder="Ureum" class="form-control"
+									name="ureum">
+								<label for="ureum">Ureum</label>
+							</div>
+                            <div class="form-floating mb-2">
+								<input type="text" id="kreatinin" placeholder="Kreatinin" class="form-control"
+									name="kreatinin">
+								<label for="kreatinin">Kreatinin</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="natrium" placeholder="Natrium" class="form-control"
+									name="natrium">
+								<label for="natrium">Natrium</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="kalium" placeholder="Kalium" class="form-control"
+									name="kalium">
+								<label for="kalium">Kalium</label>
+							</div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="col-md-6 mb-3">
+                <div class="card shadow">
+                        <div class="card-body">
+							<div class="form-floating mb-2">
+								<input type="text" id="hemoglobin" placeholder="Hemoglobin" class="form-control"
+									name="hemoglobin">
+								<label for="hemoglobin">Hemoglobin</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="seldarahputih" placeholder="Sel Darah Putih" class="form-control"
+									name="seldarahputih">
+								<label for="seldarahputih">Sel Darah Putih</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="hipertensi" placeholder="Hipertensi" class="form-control"
+									name="hipertensi">
+								<label for="hipertensi">Hipertensi</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="diabetes" placeholder="Diabetes" class="form-control"
+									name="diabetes">
+								<label for="diabetes">Diabetes</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="edema" placeholder="Edema" class="form-control"
+									name="edema">
+								<label for="edema">Edema</label>
+							</div>
+							<div class="form-floating mb-2">
+								<input type="text" id="anemia" placeholder="Anemia" class="form-control"
+									name="anemia">
+								<label for="anemia">Anemia</label>
+							</div>
+							<button class="btn btn-primary" type="submit">Submit</button>
+						</form>
+					</div>
+				</div>
+                <div class="card shadow mt-4" style="min-height: 52.1vh;">
+                    <div class="card-body">
+                        <h4 class="fw-bold my-3 mb-4">Hasil yang didapat :</h4>
+                        <h4 class="text-center">{{ prediction }}</h4>
+                    </div>
+                </div>
+			</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
