@@ -21,9 +21,9 @@ def ValuePredictor(to_predict_list):
 @app.route('/result', methods = ['POST'])
 def result():
     if request.method == 'POST':
-        to_predict_list = request.form.to_dict()
-        to_predict_list = list(to_predict_list.values())
-        to_predict_list = list(map(int, to_predict_list))
+        to_predict_list  = request.form.to_dict()
+        to_predict_list  = list(to_predict_list.values())
+        to_predict_list  = list(map(int, to_predict_list))
         result = ValuePredictor(to_predict_list)
         
         if int(result) == 0:
